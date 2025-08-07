@@ -1,24 +1,38 @@
-# This document describes the procedure for rebasing in summary.
+# Introduction
 
-# Rebasing means replaying the commits of the feature branch against another branch, usually main or master.
+This document describes the procedure for rebasing in summary.
 
-# Start from branch which needs to be rebased
-# Git checkout
-# Git pull
+Rebasing means replaying the commits of the feature branch against another branch, usually main or master.
 
-# Rebase against remote main in this case
+# Procedure
+
+## Start from target branch
+
+Start from branch which needs to be rebased
+Git checkout
+Git pull
+
+## Target
+
+Rebase against remote main in this case
 git rebase origin/main
 
-# Conflicts :(
-# As commits are replied, except merge conflicts. You will have to solve them manually each time. This might be a time consuming process.
-# Steps:
-# Fix manually in files simimar to merge conflicts
+## Conflicts
+
+Conflicts :(
+As commits are replied, except merge conflicts. You will have to solve them manually each time. This might be a time consuming process.
+Steps:
+Fix manually in files simimar to merge conflicts
 git add resolvedfile.xyz
 git rebase --continue # Continues replaying commits
 
-# Abort if needed:
-# git rebase --Abort
+## Abort
 
-# Sync back
-# Syncing back requires the force paramater as the history has changed which makes the remote rightfully suspisious
-# git push --force
+Abort if needed:
+git rebase --Abort
+
+## Sync to remote
+
+Sync back
+Syncing back requires the force paramater as the history has changed which makes the remote rightfully suspisious
+git push --force

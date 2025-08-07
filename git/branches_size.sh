@@ -1,7 +1,9 @@
 #!/bin/bash
 
+git for-each-ref --format='%(refname)' |
 while read branch
 do
     size=$(git rev-list --disk-usage --objects HEAD..$branch)
     echo "$size $branch"
-done | sort -n
+done |
+sort -n
